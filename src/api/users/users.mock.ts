@@ -1019,7 +1019,7 @@ export function updateUser(user: User) {
 }
 
 export function getUser(userId: string) {
-    return {
+    return Promise.resolve({
         nif: 'occaecat in amet cupidatat',
         id: userId,
         firstName: 'amet',
@@ -1028,5 +1028,5 @@ export function getUser(userId: string) {
         username: 'Duis enim incididunt dolor',
         email: 'IVJd4dz0bZ@yVYiwBVQQ.sv',
         lastName: 'in in sint',
-    }
+    })
 }
