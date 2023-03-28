@@ -1021,7 +1021,7 @@ export function updateUser(user: User) {
 export function getUser(userId: string) {
     return {
         nif: 'occaecat in amet cupidatat',
-        id: '1b82ad4f-f48d-9225-dad5-a573e158649a',
+        id: userId,
         firstName: 'amet',
         lastName2: 'non qui magna',
         phone: '+332-2+)(2018',

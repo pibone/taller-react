@@ -45,3 +45,12 @@ export async function updateUser(user: User) {
         headers,
     }).then((r) => r.json())
 }
+
+export async function getUser(userId: string): Promise<User> {
+    return fetch(`${baseUrl}/${userId}`, {
+        method: 'GET',
+        headers,
+    })
+        .then((r) => r.json())
+        .then((json: { data: User }) => json.data)
+}

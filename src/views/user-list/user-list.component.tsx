@@ -19,12 +19,13 @@ export function UserList() {
                     </tr>
                 </thead>
                 <tbody>
+                    {/* eslint-disable-next-line sonarjs/no-empty-collection */}
                     {users.map((user) => (
                         <tr
                             key={user.id}
                             onClick={(e) => {
                                 e.preventDefault()
-                                void router.push(`./${user.id}`)
+                                void router.push(`/users/${user.id}`)
                             }}
                         >
                             <td></td>
