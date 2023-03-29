@@ -1,4 +1,24 @@
 .container {
+    padding: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+
+    *:not(:last-child) {
+        margin-right: 8px;
+    }
+
+    *:first-child {
+        margin-right: auto;
+    }
+}
+
+.inputs {
     display: grid;
-    grid-template-columns: minmax(150px, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
 }

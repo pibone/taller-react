@@ -4,14 +4,14 @@ export type { User } from './users'
 export function getUsers(): Promise<User[]> {
     return Promise.resolve([
         {
-            username: 'Excepteur labore quis',
-            phone: '+9-075(77',
-            email: 'olX@MDHYLrGgCetmcfyNCZIBXhcwfuz.uelv',
+            username: 'dpenai',
+            phone: '666666666',
+            email: 'dpenai@axpe.com',
             id: '9c5a157d-dd0c-2613-0678-f46a724f588a',
-            nif: 'ea in et',
-            lastName2: 'minim aute esse id quis',
-            lastName: 'ex',
-            firstName: 'proident in sed',
+            nif: '33333333V',
+            lastName2: 'Peña',
+            lastName: 'Iglesias',
+            firstName: 'Daniel',
         },
         {
             id: '87fbd668-6a3d-f0fb-e418-03044279c6a3',
@@ -1020,13 +1020,13 @@ export function updateUser(user: User) {
 
 export function getUser(userId: string) {
     return Promise.resolve({
-        nif: 'occaecat in amet cupidatat',
-        id: userId,
-        firstName: 'amet',
-        lastName2: 'non qui magna',
-        phone: '+332-2+)(2018',
-        username: 'Duis enim incididunt dolor',
-        email: 'IVJd4dz0bZ@yVYiwBVQQ.sv',
-        lastName: 'in in sint',
+        username: 'dpenai',
+        phone: '666666666',
+        email: 'dpenai@axpe.com',
+        id: '9c5a157d-dd0c-2613-0678-f46a724f588a',
+        nif: '33333333V',
+        lastName2: 'Peña',
+        lastName: 'Iglesias',
+        firstName: 'Daniel',
     })
 }

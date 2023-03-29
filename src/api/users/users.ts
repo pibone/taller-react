@@ -13,6 +13,7 @@ export type User = {
     lastName2: string
     phone: string
     nif: string
+    email: string
 }
 
 export async function getUsers(): Promise<User[]> {

@@ -1,15 +1,36 @@
 import { useRouter } from 'next/router'
 import type { User } from '@/api/users/users'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './user-list.module.scss'
+import { getUsers } from '@/api/users/users.mock'
+import { Button } from '@/components/button'
 
 export type UserListProps = {}
 
 export function UserList() {
     const router = useRouter()
-    const users: User[] = []
+
+    const [users, setUsers] = useState<User[]>([])
+
+    async function updateUsers() {
+        const newUsers = await getUsers()
+        setUsers(newUsers)
+    }
+
+    useEffect(() => {
+        void updateUsers()
+    }, [])
+
     return (
         <main className={styles.container}>
+            <div className={styles.header}>
+                <h1>Usuarios</h1>
+                <Button
+                    label={'Añadir usuario'}
+                    intent="primary"
+                    onClick={() => {}}
+                />
+            </div>
             <table className={styles.usersTable}>
                 <thead>
                     <tr>
@@ -19,7 +40,6 @@ export function UserList() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* eslint-disable-next-line sonarjs/no-empty-collection */}
                     {users.map((user) => (
                         <tr
                             key={user.id}
@@ -28,9 +48,11 @@ export function UserList() {
                                 void router.push(`/users/${user.id}`)
                             }}
                         >
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{user.username}</td>
+                            <td>{user.firstName}</td>
+                            <td>
+                                {user.lastName} {user.lastName2}
+                            </td>
                         </tr>
                     ))}
                 </tbody>

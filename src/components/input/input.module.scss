@@ -5,6 +5,7 @@
 
 .label {
     padding-bottom: 4px;
+    user-select: none;
     .required &::before {
         padding-right: 4px;
         content: '*';
@@ -17,5 +18,12 @@
     border: 1px solid lightgray;
     &::placeholder {
         color: lightgray;
+    }
+}
+
+.disabled {
+    input {
+        background-color: lightgray;
+        color: gray;
     }
 }

@@ -1,5 +1,36 @@
 .container {
+    padding: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
 }
 
 .usersTable {
+    width: 100%;
+    thead {
+        tr {
+            background-color: lightgray;
+            th {
+                padding: 17px 0;
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid aquamarine;
+            cursor: pointer;
+            td {
+                padding: 17px 0;
+            }
+            &:hover {
+                background-color: lightgreen;
+            }
+        }
+    }
 }

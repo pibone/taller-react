@@ -7,22 +7,27 @@ export type InputProps = {
     label: string
     onChange(value: string): void
     type?: React.InputHTMLAttributes<HTMLInputElement>['type']
+    disabled?: boolean
     required?: boolean
     placeholder?: string
+    value: string
 }
 
 export function Input({
     id,
     label,
     onChange,
+    value,
     type = 'text',
     required = false,
+    disabled = false,
     placeholder = '',
 }: InputProps) {
     return (
         <div
             className={classNames(styles.container, {
                 [styles.required]: required,
+                [styles.disabled]: disabled,
             })}
         >
             <label className={styles.label} htmlFor={id}>
@@ -33,12 +38,15 @@ export function Input({
                     e.preventDefault()
                     onChange(e.target.value)
                 }}
+                required={required}
                 className={styles.input}
                 id={id}
                 name={id}
                 type={type}
                 placeholder={placeholder}
-            ></input>
+                value={value}
+                disabled={disabled}
+            />
         </div>
     )
 }
