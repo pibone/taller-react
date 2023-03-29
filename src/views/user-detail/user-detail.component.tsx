@@ -22,7 +22,7 @@ export function UserDetail({ userId }: UserDetailProps) {
     }, [])
 
     if (user === undefined) {
-        return
+        return <></>
     }
 
     const editButton = editMode ? (
